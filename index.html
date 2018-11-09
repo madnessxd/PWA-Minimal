@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="manifest" href="manifest.json">
+		<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+		<meta name="theme-color" content="#000000">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+		<meta name="description" content="This should be the description of your page. Try to keep it at 160 chars max.">
+	</head>
+	<body>
+		Check your console if the Service Worker is successfully registered.<br>
+		Fill in all the missing parameters and set the scope in "manifest.json" and add all your pages/files to "sw.js".
+		<script>
+		if('serviceWorker' in navigator) {
+			navigator.serviceWorker
+				   .register('sw.js')
+				   .then(function() { console.log("Service Worker Registered"); });
+		}
+		let deferredPrompt;
+		window.addEventListener('beforeinstallprompt', (e) => {
+			e.preventDefault();
+			deferredPrompt = e;
+		});
+		</script>
+	</body>
+</html>
