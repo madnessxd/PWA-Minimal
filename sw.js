@@ -7,7 +7,7 @@ self.addEventListener('install', function(e) {
 				'sw.js',
 				'images/favicon.png',
 				'images/logo512.png',
-				'images/logo192.png',
+				'images/logo192.png'
 			]);
 		})
 	);
